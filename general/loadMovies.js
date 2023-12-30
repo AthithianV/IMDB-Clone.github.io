@@ -7,7 +7,7 @@ import { loading, results } from "../script.js";
  */
 export default async function loadMovies(searchTerm, page) {
   try {
-    const url = `http://www.omdbapi.com/?s=${searchTerm}&page=${page}&apikey=cb638678`;
+    const url = `https://www.omdbapi.com/?s=${searchTerm}&page=${page}&apikey=cb638678`;
     const request = await fetch(url);
     const moviesData = await request.json();
 
