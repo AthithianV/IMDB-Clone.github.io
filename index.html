@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1e4325dabb.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>IMDB Clone</title>
+</head>
+<body>
+    <!-- Header Section With logo, Menu button, Seacrh bar with filter and seacrh button, favorites 
+    button -->
+    <header>
+        <nav>
+            <a href="#" id="logo" class="center">IMDBc</a>
+            <button type="button" title="Menu" class="nav-button center disable"><i class="fa-solid fa-bars"></i>Menu</button>
+            <div id="search-bar"> 
+                <input type="text" id="search-input" title="Search IMDBc" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>                    
+            <a href="Favorites/favouritesPage.html" class="favourites">
+                <button type="button" class="nav-button center">
+                    <i class="fa-solid fa-heart"></i>Favourites
+                </button>
+            </a>
+        </nav>
+    </header>
+
+
+
+    <section class="search-results">
+        <h1 class="heading">Search For Movies, Tv shows</h1>
+        <i class="fa-solid fa-circle-notch loading hide"></i>
+        <div class="results center">
+        </div>
+        
+    </section>
+
+    <section class="movie-section">
+
+    </section>
+
+    <template movieCard>
+        <div class="movie-card">
+            <button class="addToFavourites center"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-check green hide"></i></button>
+            <img src="https://m.media-amazon.com/images/M/MV5BYTY0MzAwNjEtYTVkNi00ZDAzLTk0M2UtOGM2NTVkYWJjMjNhXkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_QL75_UY266_CR147,0,180,266_.jpg">
+            <a href="Movie/movie.html" class="movie-name">Young Sheldon</a>
+        </div>
+    </template>
+    
+    <template pageNo>
+        <div class="resultBtns center">
+            <button class="prev page"><i class="fa-solid fa-caret-left"></i></button>
+            <span class="pageNo"></span>
+            <button class="next page"><i class="fa-solid fa-caret-right"></i></button>
+        </div>
+    </template>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+:root {
+    --theme-color: #2AC5B3;
+}
+
+body{
+    background-color: black;
+    position: relative;
+    color: white;
+}
+
+header{
+    height: 8vh;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a{
+    text-decoration: none;
+}
+
+#logo {
+    background-color: var(--theme-color);
+    font-size: 22px;
+    border-radius: 5px;
+    height: 35px;
+    padding: 5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+    font-family: fantasy;
+}
+
+.btn{
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.btn i{
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+main{
+    width: 60%;
+    margin: auto;
+    font-family: sans-serif;
+    color: white;
+}
+
+.post{
+    display: flex;
+}
+
+.poster img{
+    border: 1px solid white;
+}
+
+.movie-data{
+    margin-left: 20px;
+}
+
+.title{
+    font-size: 4rem;
+    transition: 250ms ease-in-out;
+    margin-bottom: 0;
+}
+
+.movie-name span{
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+.title:hover{
+    text-decoration: underline;
+}
+
+.rating-voting{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    margin: 20px 0; 
+}
+
+
+
+.rating{
+    margin-right: 10px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.votes{
+    margin-right: 10px;
+        padding: 20px;
+        border-radius: 5px;
+}
+
+
+
+.rating-voting i{
+    margin-right: 10px;
+    color: gold;
+}
+
+.small{
+    color: #C1BDBE;
+    font-size: 1.2rem;
+}
+
+.score{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.points {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.addToFavourites{
+    display: block;
+    width: 80%;
+    margin: auto;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: gold;
+    cursor: pointer;
+}
+
+.addToFavourites i {
+    margin-right: 10px;
+}
+
+.genre{
+    display: flex;
+}
+
+.genre p{
+    margin: 20px 20px 20px 0;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid white;
+}
+
+.info{
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.value{
+    margin-left: 10px;
+    color: #5799EF;
+}
+
+.value:hover {
+    text-decoration: underline;
+}
+
+.black{
+    color: black;
+}
+
+.plot{
+    line-height: 1.5rem;
+}
+
+@media screen and (max-width:1200px) {
+    main{
+        width: 80%;
+    }
+
+    header{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    main {
+        width: 90%;
+    }
+        header {
+            width: 90%;
+        }
+}
+
+@media screen and (max-width:800px) {
+    main {
+        width: 80%;
+    }
+
+        header {
+            width: 90%;
+        }
+
+    .post{
+        flex-direction: column;
+    }
+
+    .poster{
+        text-align: center;
+    }
+    .movie-name{
+        text-align: center;
+    }
+    .genre{
+        justify-content: center;
+    }
+}
+
+
+
+

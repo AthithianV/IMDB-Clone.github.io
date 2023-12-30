@@ -1,0 +1,119 @@
+body{
+    background-color: black;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+}
+
+header{
+    height: 10vh;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header button{
+    padding: 10px;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    font-weight: 700;
+    height: auto;
+    font-size: 1.2rem;
+    border-radius: 35px;
+}
+
+header button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+header img{
+    height: 100%;
+    width: 100%;
+    filter: saturate(40%);
+    object-fit: cover;
+}
+
+.heading{
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+    font-family: fantasy;
+    font-weight: 100;
+}
+
+section{
+    width: 60%;
+    margin: auto;
+}
+
+.movie-card {
+    flex-grow: 0;
+    flex-shrink: 1;
+    position: relative;
+    height: 300px;
+    width: 200px;
+    border: 1px solid white;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.favourites-list{
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.movie-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.movie-card:hover button {
+    background-color: rgb(93, 100, 104);
+}
+
+.movie-name {
+    display: block;
+    height: 60px;
+    border-radius: 0 0 15px 15px;
+    position: absolute;
+    width: 100%;
+    padding-top: 20px;
+    bottom: 0px;
+    color: white;
+    font-size: 15px;
+    font-weight: light;
+    background-color: #1A1A1A;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid white;
+    overflow: hidden;
+}
+
+.movie-name:hover {
+    text-decoration: underline;
+}
+
+.movie-card:hover {
+    box-shadow: 0 0 5px 1px white;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 500px){
+    .heading{
+        font-size: 3rem;
+        width: auto;
+        margin-top: -90px: 
+    }
+}

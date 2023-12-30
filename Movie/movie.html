@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="movieStyle.css">
+    <script src="https://kit.fontawesome.com/1e4325dabb.js" crossorigin="anonymous"></script>
+    <title>Movie</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html" id="logo" class="center">IMDBc</a>
+        <div class="buttons">
+            <a href="../Favorites/favouritesPage.html" class="favourites">
+                <button type="button" class="nav-button center btn">
+                    <i class="fa-solid fa-heart"></i>Favourites
+                </button>
+            </a>
+            <a href="../index.html"><button type="button" class="btn"><i class="fa-solid fa-house"></i>HOME</button></a>
+        </div>
+    </header>
+    
+    <main>
+        <section class="post">
+            <div class="poster">
+                <img src="">
+            </div>
+
+            <div class="movie-data">
+                <div class="movie-name">
+                    <h1 class="title"></h1>
+                    <span class="year small"></span><span class="duration small"></span>
+                </div>
+                <div class="rating-voting">
+                    <div class="rating small">
+                        <p>IMDB Rating:</p>
+                        <p class="points"><i class="fa-solid fa-star"></i><span class="score"></span>/10</p>
+                    </div>
+                    <div class="votes small">
+                        <p>Number of Votes:</p>
+                        <p class="points"><i class="fa-solid fa-globe"></i><span class="vote-count"></span></p>
+                    </div>
+                </div>
+                <button class="addToFavourites"><i class="fa-solid fa-plus"></i>Add To Favourites</button>
+            </div>
+        </section>
+
+        
+        <div class="genre">
+        </div>
+
+        <div class="plot">
+            <p><span class="info">Plot:</span> <span class="plot-para"></span></p>
+        </div>
+        
+        <hr>
+        <div class="info">Release Date: <span class="date value"></span></div>
+        <hr>
+        <div class="info">Director: <span class="director value"></span></div>
+        <hr>
+        <div class="info ">Writers: <span class="writers value"></span></div>
+        <hr>
+        <div class="info">Stars: <span class="stars value"></span></div>
+    </main>
+
+    <script src="movieScript.js"></script>
+</body>
+</html>
