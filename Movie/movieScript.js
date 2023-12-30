@@ -59,7 +59,7 @@ function renderPage(movieData) {
 
 async function fetchMovieDetails(movieID) {
   try {
-    const url = `http://www.omdbapi.com/?i=${movieID}&apikey=cb638678`;
+    const url = `https://www.omdbapi.com/?i=${movieID}&apikey=cb638678`;
     const request = await fetch(url);
     const moviedata = await request.json();
     renderPage(moviedata);
