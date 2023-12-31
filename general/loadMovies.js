@@ -8,17 +8,14 @@ import { loading, results, searchResult, pageNoSection } from "../script.js";
 export default async function loadMovies(searchTerm, page) {
   try {
     const url = `https://www.omdbapi.com/?s=${searchTerm}&page=${page}&apikey=cb638678`;
-    const request = await fetch(url);
+    const request = await fetch(url, {
+      method: "POST",
+    });
     const moviesData = await request.json();
 
     results.innerHTML = "";
     moviesData.Search.forEach((movie) => {
-      createMovieCard(
-        movie,
-        results,
-        document.querySelector("[movieCard]"),
-        true
-      );
+      createMovieCard(movie, results, document.querySelector("[movieCard]"));
     });
 
     results.appendChild(pageNoSection);

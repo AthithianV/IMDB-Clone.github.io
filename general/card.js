@@ -1,21 +1,21 @@
 /**Created Movies create movie card which conatins image, name of the
- * movie and also favourites button, favourite button on clicking adds
- * movies to favorites array.
+ * movie and also favourites button,
  * Once Movie card is created it is added to particular container which
  * is passed as an argument*/
 
-function toggleFavourite(favoritesBtn) {
-  favoritesBtn.querySelector(".fa-plus").classList.add("hide");
-  favoritesBtn.querySelector(".fa-check").classList.remove("hide");
-  favoritesBtn.disabled = "true";
+import renderFavourites from "../Favorites/favouriteScript.js";
+
+function toggleFavourite(favoritesBtn, plus) {
+  if (plus) {
+    favoritesBtn.querySelector(".fa-plus").classList.add("hide");
+    favoritesBtn.querySelector(".mark").classList.remove("hide");
+  } else {
+    favoritesBtn.querySelector(".fa-plus").classList.remove("hide");
+    favoritesBtn.querySelector(".mark").classList.add("hide");
+  }
 }
 
-export default function createMovieCard(
-  movie,
-  container,
-  moviesCard,
-  toAddBtn
-) {
+export default function createMovieCard(movie, container, moviesCard) {
   const card = moviesCard.content.cloneNode(true).children[0];
   const movieNameEle = card.querySelector(".movie-name");
   const posterEle = card.querySelector("img");
@@ -26,13 +26,41 @@ export default function createMovieCard(
 
   const favourites = JSON.parse(localStorage.getItem("favourites"));
 
-  if (toAddBtn) {
-    if (favourites.find((movieData) => movieData.imdbID === movie.imdbID))
-      toggleFavourite(favoritesBtn);
+  if (container.classList.contains("favourites-list")) {
     favoritesBtn.addEventListener("click", () => {
-      if (!favourites.find((movieData) => movieData.imdbID === movie.imdbID))
+      const favourites = JSON.parse(localStorage.getItem("favourites"));
+      const favouriteIndex = favourites.findIndex((movieData) => {
+        return movieData.imdbID === movie.imdbID;
+      });
+      favourites.splice(favouriteIndex, 1);
+      localStorage.setItem("favourites", JSON.stringify(favourites));
+      console.log(favourites);
+      renderFavourites();
+    });
+  } else {
+    const favouriteIndex = favourites.findIndex((movieData) => {
+      return movieData.imdbID === movie.imdbID;
+    });
+
+    if (favouriteIndex != -1) {
+      toggleFavourite(favoritesBtn, true);
+    }
+
+    favoritesBtn.addEventListener("click", () => {
+      const favourites = JSON.parse(localStorage.getItem("favourites"));
+      const favouriteIndex = favourites.findIndex((movieData) => {
+        return movieData.imdbID === movie.imdbID;
+      });
+      console.log(favouriteIndex);
+      if (favouriteIndex == -1) {
         favourites.push(movie);
-      toggleFavourite(favoritesBtn);
+        console.log(favourites);
+        toggleFavourite(favoritesBtn, true);
+      } else {
+        favourites.splice(favouriteIndex, 1);
+        console.log(favourites);
+        toggleFavourite(favoritesBtn, false);
+      }
       localStorage.setItem("favourites", JSON.stringify(favourites));
     });
   }

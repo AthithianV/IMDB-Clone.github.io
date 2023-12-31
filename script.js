@@ -14,13 +14,24 @@ const submitEle = document.querySelector("form");
 if (!localStorage.key("favourites"))
   localStorage.setItem("favourites", JSON.stringify([]));
 
+function toggleFavourite(favoritesBtn, plus) {
+  if (plus) {
+    favoritesBtn.querySelector(".fa-plus").classList.add("hide");
+    favoritesBtn.querySelector(".mark").classList.remove("hide");
+  } else {
+    favoritesBtn.querySelector(".fa-plus").classList.remove("hide");
+    favoritesBtn.querySelector(".mark").classList.add("hide");
+  }
+}
+
 function searchAction(key) {
   results.innerHTML = "";
   heading.classList.add("hide");
   loading.classList.remove("hide");
 
-  if (key != "") searchMovies(key);
-  else {
+  if (key != "") {
+    searchMovies(key);
+  } else {
     heading.classList.remove("hide");
     loading.classList.add("hide");
     pageNoSection.classList.add("hide");
