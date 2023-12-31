@@ -1,5 +1,5 @@
 import createMovieCard from "./card.js";
-import { loading, results } from "../script.js";
+import { loading, results, searchResult, pageNoSection } from "../script.js";
 
 /**Fetch the data using the search term and the page as argument and
  * if the data is successfull collected createMovieCard function
@@ -21,22 +21,22 @@ export default async function loadMovies(searchTerm, page) {
       );
     });
 
-    // searchResult.appendChild(pageNobtn);
+    results.appendChild(pageNoSection);
 
     loading.classList.add("hide");
 
-    // searchResult.querySelector(".pageNo").textContent = page;
-    // searchResult.querySelector(".resultBtns").classList.remove("hide");
-    // searchResult.querySelector(".next").addEventListener("click", () => {
-    //   page++;
-    //   loadMovies(searchTerm, page);
-    // });
-    // searchResult.querySelector(".prev").addEventListener("click", () => {
-    //   page--;
-    //   if (page > 0) {
-    //     loadMovies(searchTerm, page);
-    //   }
-    // });
+    results.querySelector(".pageNo").textContent = page;
+    results.querySelector(".resultBtns").classList.remove("hide");
+    results.querySelector(".next").addEventListener("click", () => {
+      page++;
+      loadMovies(searchTerm, page);
+    });
+    results.querySelector(".prev").addEventListener("click", () => {
+      page--;
+      if (page > 0) {
+        loadMovies(searchTerm, page);
+      }
+    });
   } catch (err) {
     loading.classList.add("hide");
     results.innerHTML = "";

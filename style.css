@@ -90,14 +90,15 @@ nav i{
     border: none;
     padding: 0 0 0 40px;
     font-size: 15px;
+    position: relative;
 }
 
-.search-icon{
+/* .search-icon{
     position: absolute;
     top: 8px;
     left: 10px;
     color: gray;
-}
+} */
 
 #filter{
     height: 36px;
@@ -108,11 +109,13 @@ nav i{
 }
 
 #search-btn{
-    margin-left: -35px;
     color: grey;
     background-color: transparent;
     border: none;
     font-size: 15px;
+    position: absolute;
+    left: 5px;
+    top: 7px;
 }
 
 #search-btn:hover{
@@ -163,6 +166,8 @@ section{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 40px;
 }
 
 .loading{
@@ -185,6 +190,10 @@ section{
     color: white;
 }
 
+.resultBtns{
+    position: absolute;
+    bottom: -30px;
+}
 
 .pageNo{
     padding: 10px;
@@ -222,7 +231,6 @@ section{
     border: 1px solid white;
     border-radius: 15px;
     margin: 15px;
-    cursor: pointer;
 }
 
 .movie-card button{
@@ -318,6 +326,21 @@ section{
     .title {
         font-size: 1.1rem;
     }
+
+    .disable, .nav-button span{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    main {
+            width: 100%;
+        }
+    
+        nav {
+            width: 80%;
+        }
 }
 
 @media screen and (max-width: 500px) {
@@ -333,13 +356,9 @@ section{
         font-size: 1rem;
     }
 
-    main{
-        width: 100%;
-    }
-    nav{
-        width: 100%;
-    }
 }
+
+
 
 
 

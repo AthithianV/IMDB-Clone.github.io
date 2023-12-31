@@ -18,12 +18,14 @@
             <a href="#" id="logo" class="center">IMDBc</a>
             <button type="button" title="Menu" class="nav-button center disable"><i class="fa-solid fa-bars"></i>Menu</button>
             <div id="search-bar"> 
-                <input type="text" id="search-input" title="Search IMDBc" placeholder="Search...">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <form>
+                    <input type="text" id="search-input" title="Search IMDBc" placeholder="Search...">
+                    <button type="submit" id="search-btn"><i class="fa-solid fa-magnifying-glass search-icon"></i></button>
+                </form>
             </div>                    
             <a href="Favorites/favouritesPage.html" class="favourites">
                 <button type="button" class="nav-button center">
-                    <i class="fa-solid fa-heart"></i>Favourites
+                    <i class="fa-solid fa-heart"></i><span>Favourites</span>
                 </button>
             </a>
         </nav>
@@ -52,7 +54,7 @@
     </template>
     
     <template pageNo>
-        <div class="resultBtns center">
+        <div class="resultBtns hide center">
             <button class="prev page"><i class="fa-solid fa-caret-left"></i></button>
             <span class="pageNo"></span>
             <button class="next page"><i class="fa-solid fa-caret-right"></i></button>
