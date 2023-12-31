@@ -168,6 +168,7 @@ section{
     flex-wrap: wrap;
     position: relative;
     margin-bottom: 40px;
+    transition: 250ms ease-in-out;
 }
 
 .loading{
