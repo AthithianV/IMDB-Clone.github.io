@@ -60,7 +60,7 @@ header img{
     transition: 250s ease-in-out;
 }
 
-.red{
+.movie-card button i:hover {
     color: red;
 }
 
